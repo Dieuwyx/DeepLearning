@@ -1,2 +1,4 @@
 # 深度学习的学习实例仓库
-git config --global --add safe.directory D:/2_Project/DeepLearning
+## 项目一：基于Pyg的图神经网络学习
+
+Pyg_demo_0 为Pyg的下载以及其内置函数的应用示例

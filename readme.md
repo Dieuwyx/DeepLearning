@@ -1,2 +1,4 @@
 # 深度学习的学习实例仓库
-git config --global --add safe.directory D:/2_Project/DeepLearning
+
+pyg_demo_0是关于pyg的安装以及相关基础操作
+pyg_demo_1是使用pyg的第一个示例演示

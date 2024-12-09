@@ -18,12 +18,12 @@ Number of features: 34
 Number of classes: 4
 ````
 数据集graph：  
-![img_1.png](img/img_1.png)  
+![img_1.png](img/1.png)  
 根据特征将数据集中的点进行将为，并将其可视化：  
-![img_2.png](img/img_2.png)  
+![img_2.png](img/2.png)  
 训练模型为：半监督semi-supervised GCN  
 四分类结果：  
-![img.png](img/img.png)  
+![img.png](img/0.png)  
 训练的loss值为：0.0013
 ### pyg_demo_Core  
 Cora数据集是论文引用数据集，每一个点有1433维向量，最终要对每个点进行7分类任务，每个类别只有20个点有标注。  
@@ -50,7 +50,7 @@ Is undirected:True
 邻接矩阵为稀疏，2维，10556个边；
 val_mask和test_mask分别表示这个点需要被用到哪个集。  
 下图为将为2维后的数据图：  
-![img_3.png](img/img_3.png)
+![img_3.png](img/3.png)
 
 在本文件中，设置了一组对比试验  
 1. 首先，用传统的MPL神经网络进行训练。  
@@ -95,5 +95,34 @@ class GCN(torch.nn.Module):
 Loss:0.2379
 Test Accuracy: 0.8060
 ```  
-![img.png](img/img_4.png)
+![img.png](img/4.png)  
+![img.png](img/5.png)
 ###  pyg_demo_TU_MUTAG
+数据集来自
+[TuDataset](https://chrsmrrs.github.io/datasets/docs/datasets/)  
+本文件随机选取了其中任意一项MUTAG  
+数据集特征如下:
+```
+Dataset: MUTAG(188):
+====================
+Number of graphs: 188
+Number of features: 7
+Number of classes: 2
+
+Data(edge_index=[2, 38], x=[17, 7], edge_attr=[38, 4], y=[1])
+=============================================================
+Number of nodes: 17
+Number of edges: 38
+Average node degree: 2.24
+Has isolated nodes: False
+Has self-loops: False
+Is undirected: True
+```
+对其进行二分类任务，模型使用的是GCN，卷积使用的是GraphConv。
+
+未分类前，data其中一张图如下：  
+![img_1.png](img/6.png)  
+
+分类后结果如下：  
+![img_2.png](img/7.png)  
+![img_3.png](img/8.png)  
